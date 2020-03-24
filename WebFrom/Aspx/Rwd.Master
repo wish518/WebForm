@@ -1,40 +1,59 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Rwd.master.cs" Inherits="WebFrom.Aspx.Rwd1" %>
-<%@ Register  Src="Menu.ascx" TagPrefix="friendlyUrls" TagName="Menu" %>
+
+<%@ Register Src="Menu.ascx" TagPrefix="friendlyUrls" TagName="Menu" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-<meta name="viewport" content="width=device-width , initial-scale=1" />
+    <meta name="viewport" content="width=device-width , initial-scale=1" />
     <title></title>
     <%: Styles.Render("~/Content/css") %>
     <style type="text/css">
-        html,body{
-            padding:0;
+        html, body {
+            padding: 0;
             margin: 0;
-            height:100%;
-            overflow:hidden;
-            min-height:540px;
-            min-width:320px;
+            height: 100%;
+            overflow: hidden;
+            min-height: 540px;
+            min-width: 320px;
         }
+
         .row {
-            margin:0;
-            padding:0;
+            margin: 0;
+            padding: 0;
         }
-    @media screen and (max-width: 575px) { 
-        #RightShowDiv {
-            height: 50%;
-            overflow-y:scroll;
+
+        @media screen and (max-width: 575px) {
+            body {
+                overflow-y: scroll;
+            }
+
+            .ShowPage {
+                height: 50% !important;
+            }
+
+            #Content {
+                height: 150% !important;
+            }
+
+            #LeftShowDiv, #RightShowDiv {
+                height: 90% !important;
+            }
         }
-    }
+        @media screen and (max-height: 540px) {
+            html {
+                overflow-y:  scroll;
+            }
+        }
     </style>
 </head>
-<body> 
+<body>
     <friendlyUrls:Menu runat="server" />
     <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>
-    <%:Scripts.Render("~/bundles/CommonJs") %>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
-    <%:Scripts.Render("~/bundles/bootstrap") %>
-    <%:Scripts.Render("~/Scripts/Aspx/Rwd.js") %>
+<%:Scripts.Render("~/bundles/CommonJs") %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+<%:Scripts.Render("~/bundles/bootstrap") %>
+<%:Scripts.Render("~/Scripts/Aspx/Rwd.js") %>

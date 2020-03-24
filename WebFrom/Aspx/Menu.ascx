@@ -20,6 +20,9 @@
         margin-left: 5px;
         border-color: black;
     }
+    .btn font {
+        vertical-align:initial !important;
+    }
 
     .DivPage {
         position: relative;
@@ -98,8 +101,8 @@
 </style>
 <div id="Menu">
     <div id="Architecture" class="row justify-content-center align-items-center">
-        <button class="Architecture-btn btn btn-outline-info" onclick="SetArchitecture('MVC')" id="MVC">Mvc架構網頁</button>
-        <button class="Architecture-btn btn btn-outline-info" onclick="SetArchitecture('VUE')" id="VUE">Vue.Cli架構網頁</button>
+        <button class="Architecture-btn btn btn-outline-info" onclick="SetArchitecture('MVC','<%=ConfigurationManager.AppSettings["CoreApiServiceUrl"] %>')" id="MVC">Mvc架構網頁</button>
+        <button class="Architecture-btn btn btn-outline-info" onclick="SetArchitecture('VUE','<%=ConfigurationManager.AppSettings["CoreApiServiceUrl"] %>')" id="VUE">Vue.Cli架構網頁</button>
     </div>
     <div id="DivPage" class="DivPage row justify-content-center">
     </div>
